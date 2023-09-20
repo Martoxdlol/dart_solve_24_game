@@ -5,6 +5,14 @@ homepage: https://github.com/Martoxdlol/dart_solve_24_game
 repository: https://github.com/Martoxdlol/dart_solve_24_game
 documentation: https://github.com/Martoxdlol/dart_solve_24_game/blob/main/README.md
 
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
+
 environment:
   sdk: ^3.1.2
 
