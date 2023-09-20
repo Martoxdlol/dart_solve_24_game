@@ -7,9 +7,9 @@
 The 24 puzzle is an arithmetical puzzle in which the objective is to find a way to manipulate four integers so that the end result is 24. For example, for the numbers 4, 7, 8, 8, a possible solution is 
 (7 − (8 ÷ 8)) × 4 = 24
 
-## This solver
+## Cases outside the original game
 
-This solver can handle any number of cards (with any number in it) and any target number.
+This solver can handle cases outside the original game, like floating point numbers, negative numbers, and more than 4 cards.
 
 ## Usage
 ```dart
@@ -34,7 +34,11 @@ Example: `solve_24_game 1 2 3 4 = 24`
 
 Using pub: `dart pub global run solve_24_game 1 2 2 = 5`
 
-## Example 1
+## Examples outside the original game
+
+This solver can handle cases outside the original game, like floating point numbers, negative numbers, and more than 4 cards.
+
+### Example 1
 
 Input: `10 20 30 40 50`
 
