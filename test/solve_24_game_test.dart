@@ -13,4 +13,10 @@ void main() {
 
     expect(solutions.length, greaterThan(0));
   });
+
+  test('example 3', () {
+    final solutions = solve([1, 1], 2).toList();
+
+    expect(solutions.length, greaterThan(0));
+  });
 }

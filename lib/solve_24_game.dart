@@ -4,19 +4,25 @@ import 'package:solve_24_game/solution.dart';
 import 'package:trotter/trotter.dart';
 
 Iterable<Solution> solve(Iterable<num> values, num target) {
-  final input = values.map(RootOperation.new);
+  final input = values.map(RootOperation.new).toList();
+
+  if (input.length <= 1) {
+    throw Exception('Input must have at least 2 values');
+  }
 
   return _solve([], input.toList(), target);
 }
 
-Iterable<Solution> _solve(List<Operation> stack, List<Operation> values, num expected) sync* {
+Iterable<Solution> _solve(
+    List<Operation> stack, List<Operation> values, num expected) sync* {
   final operations = generateOperationsCombinations(values);
 
   for (final operation in operations) {
     final nextStack = [...stack, operation];
 
     if (operation.transformedValues.length == 1) {
-      if (operation.transformedValues[0].value.toDouble() == expected.toDouble()) {
+      if (operation.transformedValues[0].value.toDouble() ==
+          expected.toDouble()) {
         yield Solution(nextStack.last as MathOperationFromValues);
       }
     } else {
@@ -25,7 +31,8 @@ Iterable<Solution> _solve(List<Operation> stack, List<Operation> values, num exp
   }
 }
 
-Iterable<MathOperationFromValues> generateOperationsCombinations<T>(List<Operation> values) sync* {
+Iterable<MathOperationFromValues> generateOperationsCombinations<T>(
+    List<Operation> values) sync* {
   final indexes = List<num>.generate(values.length, (i) => i);
   final combinationsIndexes = Combinations(2, indexes);
 

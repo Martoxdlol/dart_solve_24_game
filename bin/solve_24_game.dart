@@ -1,6 +1,7 @@
 import 'package:solve_24_game/solve_24_game.dart';
 
-final usage = "Usage: solve_24_game <number> <number> <number> <number> [= <expected result>]";
+final usage =
+    "Usage: solve_24_game <number> <number> <number> <number> [= <expected result>]";
 
 void main(List<String> arguments) {
   final input = <num>[];
@@ -30,12 +31,23 @@ void main(List<String> arguments) {
     return;
   }
 
-  final solutions = solve(input, expected).toList();
-
   if (input.isEmpty) {
     print(usage);
     return;
   }
+
+  if (input.length == 1) {
+    if (input[0] == expected) {
+      print("1 = $expected");
+    } else {
+      print("1 != $expected");
+    }
+
+    print(usage);
+    return;
+  }
+
+  final solutions = solve(input, expected).toList();
 
   for (var e in solutions) {
     print("$e = $expected");

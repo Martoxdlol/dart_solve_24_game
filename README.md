@@ -15,10 +15,12 @@ This solver can handle any number of cards (with any number in it) and any targe
 ```dart
 import 'package:solve_24_game/solve_24_game.dart';
 
-final solutions = solve([1, 2, 3, 4], 24);
+void main() {
+  final solutions = solve([1, 2, 3, 4], 24);
 
-for (final solution in solution) {
-    print(solution)
+  for (final solution in solutions) {
+    print(solution);
+  }
 }
 ```
 
