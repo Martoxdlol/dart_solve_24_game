@@ -3,14 +3,20 @@ import 'package:solve_24_game/operator.dart';
 import 'package:solve_24_game/solution.dart';
 import 'package:trotter/trotter.dart';
 
-Iterable<Solution> solve(Iterable<num> values, num target) {
+Iterable<Solution> solve(Iterable<num> values, num target) sync* {
   final input = values.map(RootOperation.new).toList();
 
   if (input.length <= 1) {
     throw Exception('Input must have at least 2 values');
   }
 
-  return _solve([], input.toList(), target);
+  final noRepeat = Set<String>();
+
+  for (final solution in _solve([], input.toList(), target)) {
+    if (noRepeat.contains(solution.toString())) continue;
+    noRepeat.add(solution.toString());
+    yield solution;
+  }
 }
 
 Iterable<Solution> _solve(
