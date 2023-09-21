@@ -10,7 +10,7 @@
 
 - Updated docs
 
-## 1.0.2
+## 1.0.3
 
 - Fixed missing solutions. Sometimes it missed solutions when **-** or **/** was required to find a solution.
 - Reduced repeated solutions.
