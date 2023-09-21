@@ -19,4 +19,10 @@ void main() {
 
     expect(solutions.length, greaterThan(0));
   });
+
+  test('example 4', () {
+    final solutions = solve([1, 7, 3, 8], 24).toList();
+
+    expect(solutions.length, greaterThan(0));
+  });
 }

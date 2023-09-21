@@ -34,7 +34,7 @@ Iterable<Solution> _solve(
 Iterable<MathOperationFromValues> generateOperationsCombinations<T>(
     List<Operation> values) sync* {
   final indexes = List<num>.generate(values.length, (i) => i);
-  final combinationsIndexes = Combinations(2, indexes);
+  final combinationsIndexes = Permutations(2, indexes);
 
   for (final combination in combinationsIndexes.iterable) {
     for (final operator in operators) {
