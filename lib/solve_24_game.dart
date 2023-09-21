@@ -10,7 +10,7 @@ Iterable<Solution> solve(Iterable<num> values, num target) sync* {
     throw Exception('Input must have at least 2 values');
   }
 
-  final noRepeat = Set<String>();
+  final noRepeat = <String>{};
 
   for (final solution in _solve([], input.toList(), target)) {
     if (noRepeat.contains(solution.toString())) continue;
